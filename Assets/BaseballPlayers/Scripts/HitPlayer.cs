@@ -47,5 +47,11 @@ public class HitPlayer : MonoBehaviour {
         Debug.Log("There was at least a tip");
 
     }
+
+	void int hello()
+	{
+
+		return 1;
+	}
     
 }
