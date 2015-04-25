@@ -10,7 +10,7 @@ public class HitPlayer : MonoBehaviour {
     public AudioClip hit;
     private int swingCountRemaining = 20;
     public Text swingsRemainingText;
-    //my comment
+    //fuck your my comment
 
 
 
