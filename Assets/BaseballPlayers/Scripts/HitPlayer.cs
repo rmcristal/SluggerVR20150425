@@ -10,7 +10,7 @@ public class HitPlayer : MonoBehaviour {
     public AudioClip hit;
     private int swingCountRemaining = 20;
     public Text swingsRemainingText;
-    //my comment. I hope TJ is having a good day.
+    //my comment. I hope TJ is having a good day. added line.
 
 
 
@@ -50,5 +50,6 @@ public class HitPlayer : MonoBehaviour {
         Debug.Log("There was at least a tip");
 
     }
+
     
 }
