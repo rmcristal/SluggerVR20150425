@@ -10,6 +10,9 @@ public class HitPlayer : MonoBehaviour {
     public AudioClip hit;
     private int swingCountRemaining = 20;
     public Text swingsRemainingText;
+    //my comment
+
+
 
 	// Use this for initialization
 	void Start () {
