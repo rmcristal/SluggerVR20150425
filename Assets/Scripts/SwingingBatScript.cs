@@ -6,6 +6,33 @@ public class SwingingBatScript : MonoBehaviour {
 	private Animator batAnimator;
 	public GameObject bat;
 	public AudioClip hit;
+    private static int numberOfHits; //RYAN: YOU STOPPED HERE. CHANGE THIS TO MATCH WITH REST AND SET UP TOTAL NUMBER OF HITS MINUS ONES IN FAIR PLAY = TOTAL FOUL BALLS.
+    private static int numberOfFairHits;
+    
+    public static int NumberOfHits
+    {
+        get
+        {
+            return numberOfHits;
+        }
+        set 
+        {
+            numberOfHits = value;
+        }
+    }
+
+
+    public static int NumberOfFairHits
+    {
+        get
+        {
+            return numberOfFairHits;
+        }
+        set
+        {
+            numberOfFairHits = value;
+        }
+    }
 	
 	
 	// Use this for initialization
