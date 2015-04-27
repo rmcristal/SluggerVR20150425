@@ -38,6 +38,11 @@ public class HitPlayer : MonoBehaviour {
                 UIText.text = ("Swings Remaining: " + swingCountRemaining + "\nNumber of Hits: " + numberOfFairHitsLocal);
                 return;
             }
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                m_HitPlayer.animation.Play("Bunt");
+            }
+
         }
     }
     //fix
