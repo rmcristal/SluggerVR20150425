@@ -9,8 +9,8 @@ public class HitPlayer : MonoBehaviour {
 	bool bEnd=true;
     public AudioClip hit;
     private int swingCountRemaining = 20;
-    public Text swingsRemainingText;
-    //my comment. I hope TJ is having a good day. added line.
+    public Text UIText;
+    private int numberOfFairHitsLocal;
 
 
 
@@ -22,20 +22,25 @@ public class HitPlayer : MonoBehaviour {
         
 	}
 
+
 	
 	// Update is called once per frame
-	void Update () {
-		if (bEnd) {
-			if (Input.GetKeyDown(KeyCode.Space)) {
-				bEnd=false;
-				StartCoroutine("PlayAni","hit");
+    void Update()
+    {
+        numberOfFairHitsLocal = SwingingBatScript.NumberOfFairHits;
+        if (bEnd)
+        {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                bEnd = false;
+                StartCoroutine("PlayAni", "hit");
                 swingCountRemaining -= 1;
-                swingsRemainingText.text = ("Swings Remaining: " + swingCountRemaining);
+                UIText.text = ("Swings Remaining: " + swingCountRemaining + "\nNumber of Hits: " + numberOfFairHitsLocal);
                 return;
-			}
-			
-		}
-	}
+            }
+        }
+    }
+    //fix
 	
 	IEnumerator PlayAni(string name) {
 		m_HitPlayer.animation.Play(name);

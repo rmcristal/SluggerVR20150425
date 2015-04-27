@@ -6,8 +6,9 @@ public class SwingingBatScript : MonoBehaviour {
 	private Animator batAnimator;
 	public GameObject bat;
 	public AudioClip hit;
-    private static int numberOfHits; //RYAN: YOU STOPPED HERE. CHANGE THIS TO MATCH WITH REST AND SET UP TOTAL NUMBER OF HITS MINUS ONES IN FAIR PLAY = TOTAL FOUL BALLS.
-    private static int numberOfFairHits;
+    private static int numberOfHits; 
+    private static int numberOfFairHits = 1;
+    private int numberOfFoulHits = NumberOfHits - NumberOfFairHits;
     
     public static int NumberOfHits
     {
@@ -33,6 +34,8 @@ public class SwingingBatScript : MonoBehaviour {
             numberOfFairHits = value;
         }
     }
+
+
 	
 	
 	// Use this for initialization
@@ -48,7 +51,7 @@ public class SwingingBatScript : MonoBehaviour {
 	void Update () 
 	{
 		
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.B))
 		{
 			batAnimator.SetInteger ("Swing", 1);
 		}
