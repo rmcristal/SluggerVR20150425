@@ -28,6 +28,7 @@ public class HitPlayer : MonoBehaviour {
     void Update()
     {
         numberOfFairHitsLocal = SwingingBatScript.NumberOfFairHits;
+        UIText.text = ("Swings Remaining: " + swingCountRemaining + "\nNumber of Hits: " + numberOfFairHitsLocal);
         if (bEnd)
         {
             if (Input.GetKeyDown(KeyCode.B))
@@ -35,7 +36,7 @@ public class HitPlayer : MonoBehaviour {
                 bEnd = false;
                 StartCoroutine("PlayAni", "hit");
                 swingCountRemaining -= 1;
-                UIText.text = ("Swings Remaining: " + swingCountRemaining + "\nNumber of Hits: " + numberOfFairHitsLocal);
+                //UIText.text = ("Swings Remaining: " + swingCountRemaining + "\nNumber of Hits: " + numberOfFairHitsLocal);
                 return;
             }
             if(Input.GetKeyDown(KeyCode.F))

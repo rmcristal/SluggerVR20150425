@@ -7,7 +7,7 @@ public class SwingingBatScript : MonoBehaviour {
 	public GameObject bat;
 	public AudioClip hit;
     private static int numberOfHits; 
-    private static int numberOfFairHits = 1;
+    private static int numberOfFairHits;
     private int numberOfFoulHits = NumberOfHits - NumberOfFairHits;
     
     public static int NumberOfHits
