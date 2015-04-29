@@ -26,6 +26,12 @@ public class BallPrefabHolderScript : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision)
 	{
+        if (collision.gameObject.tag == "Bat")
+        {
+            UIScript.NumberOfHits++;
+            
+        }
+        
         //numberOfTimesThisBallHasCollided += 1;
         //if (numberOfTimesThisBallHasCollided == 2)
         //{
@@ -61,9 +67,9 @@ public class BallPrefabHolderScript : MonoBehaviour {
     {
         if(other.gameObject.tag == "NewFair")
         {
-            SwingingBatScript.NumberOfFairHits++;
-            //FairAndFoulBallScript.Fair = "Fair";
-            Debug.Log("New Fair = Fair");
+            UIScript.NumberOfFairHits++;
+            Destroy(gameObject.collider);
+            
         }
         
         if(other.gameObject.tag == "FoulBall")

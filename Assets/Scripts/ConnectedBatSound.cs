@@ -7,7 +7,8 @@ public class ConnectedBatSound : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
+        Debug.Log("I'm attached to this gameObject:" + this.gameObject);
 	}
 	
 	// Update is called once per frame

@@ -6,34 +6,34 @@ public class SwingingBatScript : MonoBehaviour {
 	private Animator batAnimator;
 	public GameObject bat;
 	public AudioClip hit;
-    private static int numberOfHits; 
-    private static int numberOfFairHits;
-    private int numberOfFoulHits = NumberOfHits - NumberOfFairHits;
+    //private static int numberOfHits; 
+    //private static int numberOfFairHits;
+    //private int numberOfFoulHits = NumberOfHits - NumberOfFairHits;
     
-    public static int NumberOfHits
-    {
-        get
-        {
-            return numberOfHits;
-        }
-        set 
-        {
-            numberOfHits = value;
-        }
-    }
+    //public static int NumberOfHits
+    //{
+    //    get
+    //    {
+    //        return numberOfHits;
+    //    }
+    //    set 
+    //    {
+    //        numberOfHits = value;
+    //    }
+    //}
 
 
-    public static int NumberOfFairHits
-    {
-        get
-        {
-            return numberOfFairHits;
-        }
-        set
-        {
-            numberOfFairHits = value;
-        }
-    }
+    //public static int NumberOfFairHits
+    //{
+    //    get
+    //    {
+    //        return numberOfFairHits;
+    //    }
+    //    set
+    //    {
+    //        numberOfFairHits = value;
+    //    }
+    //}
 
 
 	

@@ -13,8 +13,6 @@ public class NewPitchersScript : MonoBehaviour {
     private int pitchRandomizer;
     private string perfectPitch = "Perfect"; //Can choose from "Perfect", "No", or "Curve Ball"
     public int regularPitchSpeed = 1440;
-    //public float howMuchAngularDrag = 3.5f;
-    //public float howMuchAngularVelocity = 60f;
     private float amountOfCurve = 15f;
     private Vector3 regularPitchVector3 = new Vector3(0f, 0f, 1f);
 
@@ -37,7 +35,7 @@ public class NewPitchersScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        randomWait = Random.Range(2f, 3f);
+        randomWait = Random.Range(1f, 1.5f);
         if (started == false && Input.GetKeyDown(KeyCode.S))
         {
             if (bEnd)
