@@ -33,7 +33,7 @@ public class HitPlayer : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.B))
             {
                 bEnd = false;
-                StartCoroutine("PlayAni", "hit");
+                StartCoroutine("PlayAni", "hit - Trying to Make the Swing Faster");
                 //swingCountRemaining -= 1;
                 UIScript.numberOfSwingsTaken++;
                 //UIText.text = ("Swings Remaining: " + swingCountRemaining + "\nNumber of Hits: " + numberOfFairHitsLocal);
