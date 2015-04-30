@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BallPrefabHolderScript : MonoBehaviour {
 
-    private int numberOfTimesThisBallHasCollided;
+    public GameObject bat;
     
 
 
@@ -29,37 +29,10 @@ public class BallPrefabHolderScript : MonoBehaviour {
         if (collision.gameObject.tag == "Bat")
         {
             UIScript.NumberOfHits++;
+            StartCoroutine("DestroyBallScript");
             
         }
-        
-        //numberOfTimesThisBallHasCollided += 1;
-        //if (numberOfTimesThisBallHasCollided == 2)
-        //{
-        //    if (collision.gameObject.tag == "Bat")
-        //    {
-        //        SwingingBatScript.NumberOfHits += 1;
-        //        Debug.Log("Total Number of Times Bat Connected with a Ball: " + SwingingBatScript.NumberOfHits);
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("I am running into something already");
-        //        //Destroy(gameObject);
-        //    }
-        //}
-        //if (numberOfTimesThisBallHasCollided == 3)
-        //{
-        //    if (collision.gameObject.tag == "FairBall")
-        //    {
-        //        {
-        //            SwingingBatScript.NumberOfFairHits += 1;
-        //            Debug.Log("Total Number of Fair Ball Hits: " + SwingingBatScript.NumberOfFairHits);
-        //        }
-        //    }
-        //}
-        //if(numberOfTimesThisBallHasCollided>3)
-        //{
-        //    Debug.Log("Collided a lot: " + numberOfTimesThisBallHasCollided);
-        //}
+
 	}
 
 
@@ -76,5 +49,11 @@ public class BallPrefabHolderScript : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator DestroyBallScript()
+    {
+        yield return new WaitForSeconds(7);
+        Destroy(gameObject);
     }
 }

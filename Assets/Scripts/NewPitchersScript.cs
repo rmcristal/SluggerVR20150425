@@ -15,7 +15,11 @@ public class NewPitchersScript : MonoBehaviour {
     public int regularPitchSpeed = 1440;
     private float amountOfCurve = 15f;
     private Vector3 regularPitchVector3 = new Vector3(0f, 0f, 1f);
-
+    public GameObject Box1;
+    public GameObject Box2;
+    private float magnitude;
+    
+    
 
 
 
@@ -26,10 +30,13 @@ public class NewPitchersScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        magnitude = (Box1.transform.position - Box2.transform.position).magnitude;
+        Debug.Log(magnitude);
         m_PitcherPlayer.animation["idle"].wrapMode = WrapMode.Loop;
         m_PitcherPlayer.animation.Play("idle");
         animationWaitTime = m_PitcherPlayer.animation["shoot"].length;
         Debug.Log(animationWaitTime);
+        
     }
 
     // Update is called once per frame

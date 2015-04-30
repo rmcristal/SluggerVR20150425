@@ -11,7 +11,8 @@ public class UIScript : MonoBehaviour {
     public static int numberOfSwingsTaken;
     public static int swingCountRemaining;
     private float hitsPerSwingBattingAvg;
-    public Text UIText;
+    public Text OverallStats;
+    public Text TooFastOrTooSlow;
 
     public static int NumberOfHits
     {
@@ -56,7 +57,7 @@ public class UIScript : MonoBehaviour {
         
         else
             hitsPerSwingBattingAvg = 0;
-        UIText.text = ("Swings Remaining: " + swingCountRemaining + "\nTotal Swings Taken: " + numberOfSwingsTaken + "\nNumber of Hits: " + NumberOfFairHits + "\nNumber of Foul Balls: " + numberOfFoulHits + "\nHits per Swing Batting Avg: " + hitsPerSwingBattingAvg.ToString("F3"));
+        OverallStats.text = ("Swings Remaining: " + swingCountRemaining + "\nTotal Swings Taken: " + numberOfSwingsTaken + "\nNumber of Hits: " + NumberOfFairHits + "\nNumber of Foul Balls: " + numberOfFoulHits + "\nHits per Swing Batting Avg: " + hitsPerSwingBattingAvg.ToString("F3"));
 
 	}
 }
