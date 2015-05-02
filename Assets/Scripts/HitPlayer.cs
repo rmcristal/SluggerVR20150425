@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
+
 public class HitPlayer : MonoBehaviour {
 
 	//public GUIText m_HelpText=null;
@@ -17,8 +18,8 @@ public class HitPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//m_HelpText.text=m_HelpText.text.Replace("\\","\n");
-		m_HitPlayer.animation["idle"].wrapMode=WrapMode.Loop;
-		m_HitPlayer.animation.Play("idle");
+		//m_HitPlayer.GetComponent<Animation>()["idle"].wrapMode=WrapMode.Loop;
+		//m_HitPlayer.GetComponent<Animation>().Play("idle");
         
 	}
 
@@ -39,19 +40,24 @@ public class HitPlayer : MonoBehaviour {
                 //UIText.text = ("Swings Remaining: " + swingCountRemaining + "\nNumber of Hits: " + numberOfFairHitsLocal);
                 return;
             }
-            if(Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                m_HitPlayer.animation.Play("Bunt");
+               
+                m_HitPlayer.GetComponent<Animation>().Play("NewBunt");
+                
             }
 
         }
+
+
+
     }
     //fix
 	
 	IEnumerator PlayAni(string name) {
-		m_HitPlayer.animation.Play(name);
-		yield return new WaitForSeconds(m_HitPlayer.animation[name].length);
-		m_HitPlayer.animation.Play("idle");
+		m_HitPlayer.GetComponent<Animation>().Play(name);
+		yield return new WaitForSeconds(m_HitPlayer.GetComponent<Animation>()[name].length);
+		//m_HitPlayer.GetComponent<Animation>().Play("idle");
 		bEnd=true;
 	}
 

@@ -4,8 +4,8 @@ using System.Collections;
 public class BallPrefabHolderScript : MonoBehaviour {
 
     public GameObject bat;
-    
 
+    bool hasBeenHit = false;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +28,7 @@ public class BallPrefabHolderScript : MonoBehaviour {
 	{
         if (collision.gameObject.tag == "Bat")
         {
+            hasBeenHit = true;
             UIScript.NumberOfHits++;
             StartCoroutine("DestroyBallScript");
             
@@ -38,10 +39,11 @@ public class BallPrefabHolderScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "NewFair")
+        if(other.gameObject.tag == "NewFair" && hasBeenHit)
         {
             UIScript.NumberOfFairHits++;
-            Destroy(gameObject.collider);
+            Destroy(gameObject.GetComponent<Collider>());
+            Debug.Log("I've entered a trigger with the \"new Fair\" tag");
             
         }
         

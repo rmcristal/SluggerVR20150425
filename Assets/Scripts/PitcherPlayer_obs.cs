@@ -9,8 +9,8 @@ public class PitcherPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		m_PitcherPlayer.animation["idle"].wrapMode=WrapMode.Loop;
-		m_PitcherPlayer.animation.Play("idle");
+		m_PitcherPlayer.GetComponent<Animation>()["idle"].wrapMode=WrapMode.Loop;
+		m_PitcherPlayer.GetComponent<Animation>().Play("idle");
 	}
 	
 	// Update is called once per frame
@@ -24,9 +24,9 @@ public class PitcherPlayer : MonoBehaviour {
 	}
 
 	IEnumerator PlayAni(string name) {
-		m_PitcherPlayer.animation.Play(name);
-		yield return new WaitForSeconds(m_PitcherPlayer.animation[name].length);
-		m_PitcherPlayer.animation.Play("idle");
+		m_PitcherPlayer.GetComponent<Animation>().Play(name);
+		yield return new WaitForSeconds(m_PitcherPlayer.GetComponent<Animation>()[name].length);
+		m_PitcherPlayer.GetComponent<Animation>().Play("idle");
 		bEnd=true;
 	}
 }

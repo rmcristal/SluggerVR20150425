@@ -32,9 +32,9 @@ public class NewPitchersScript : MonoBehaviour {
     {
         magnitude = (Box1.transform.position - Box2.transform.position).magnitude;
         Debug.Log(magnitude);
-        m_PitcherPlayer.animation["idle"].wrapMode = WrapMode.Loop;
-        m_PitcherPlayer.animation.Play("idle");
-        animationWaitTime = m_PitcherPlayer.animation["shoot"].length;
+        m_PitcherPlayer.GetComponent<Animation>()["idle"].wrapMode = WrapMode.Loop;
+        m_PitcherPlayer.GetComponent<Animation>().Play("idle");
+        animationWaitTime = m_PitcherPlayer.GetComponent<Animation>()["shoot"].length;
         Debug.Log(animationWaitTime);
         
     }
@@ -61,7 +61,7 @@ public class NewPitchersScript : MonoBehaviour {
     {
         while (true)
         {
-            m_PitcherPlayer.animation.Play(name);
+            m_PitcherPlayer.GetComponent<Animation>().Play(name);
             yield return new WaitForSeconds(1f);
             ballClone = Instantiate(ballPrefab) as Rigidbody;
             pitchRandomizer = Random.Range(1,6);
@@ -86,8 +86,8 @@ public class NewPitchersScript : MonoBehaviour {
 
             else pitchSpeed = regularPitchSpeed;
             ballClone.AddForce(regularPitchVector3 * -pitchSpeed);
-            yield return new WaitForSeconds(m_PitcherPlayer.animation[name].length);
-            m_PitcherPlayer.animation.Play("idle");
+            yield return new WaitForSeconds(m_PitcherPlayer.GetComponent<Animation>()[name].length);
+            m_PitcherPlayer.GetComponent<Animation>().Play("idle");
             yield return new WaitForSeconds(randomWait);
             bEnd = true;
             //Destroy(ballClone.gameObject);
